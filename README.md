@@ -8,9 +8,9 @@ Time-oriented approaches to session reconstruction look for a period of inactivi
 
 ## Goal
 
-You job is to write a program that reads [this dataset](http://ita.ee.lbl.gov/html/contrib/EPA-HTTP.html) and calculates the sessions for each visitor using an inactivity threshold of 30 minutes.
+Your job is to write a program that reads [this dataset](http://ita.ee.lbl.gov/html/contrib/EPA-HTTP.html) and calculates the sessions for each visitor using an inactivity threshold of __30 minutes__.
 
-The sessions must be written to a file named `sessions.csv`, each line in the file must have the following format:
+The computed visit sessions must be written to a file named `sessions.csv`, each line in the file must have the following format:
 
 ```
 IP_ADDRESS,SESSION_START,SESSION_END
@@ -47,6 +47,10 @@ where for a certain hour of the day (say 2pm):
 * `HOUR_START` is 14:00
 * `HOUR_END` is 14:59
 
+### Extra extra goal
+
+You get super extra bonus points if you build your solution on top of a distributed computing framework like Hadoop or Spark. 
+
 ## Submission instructions
 
 ### Programming language
@@ -55,11 +59,11 @@ You can choose any programming language you desire to implement the solution (if
 
 ### Implementation
 
-Try to use a functional approach to the solution, with a strong preference towards immutability and composability.
+Try to stick to a [functional](http://en.wikipedia.org/wiki/Functional_programming) approach when implementing the solution, with a strong preference towards immutability and composability.
 
-For instance, use `map`, `reduce` and `partition` cosntructs and prefer immutable data structures.
+For instance prefer `map`, `reduce` and `partition` constructs against flow constrol construct like `for` and `while`,  and use immutable data structures as much as possible (i.e. create new collections instead of modifying existing ones).
 
-If your language of choice is Java, a good choice is [Guava's Immutable Collections](https://code.google.com/p/guava-libraries/wiki/ImmutableCollectionsExplained).
+If your language of choice is Java, a good immutable collection library is [Guava's Immutable Collections](https://code.google.com/p/guava-libraries/wiki/ImmutableCollectionsExplained).
 
 ### Submission guidelines
 
