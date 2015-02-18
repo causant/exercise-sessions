@@ -68,3 +68,27 @@ If your language of choice is Java, a good immutable collection library is [Guav
 ### Submission guidelines
 
 To submit your solution, fork this repository, commit your code and create a pull request.
+
+## Some info about the provided solution
+
+### Implementation 
+
+The solution was implemented in Java and was build and tested on top of a virtual Hadoop framework v. 2.3.0
+
+### Project structure
+
+* src folder contains the source files 
+* build folder contains the jar used to test the application
+* output_files folder contains the two cvs files obtained by executing the provided program
+
+### Excecution
+ Session reconstruction:
+ hadoop jar sessionization.jar sessionization sessionization_input_path sessionization_output_path
+ After executing the application, the file `sessions.csv` will be available at sessionization_output_path/sessions
+ 
+ Hourly stats:
+ hadoop jar sessionization.jar hourly_stats sessionization_output_path/sessions/sessions.csv hourly_stats_output_path
+ After executing the application, the file `stats.csv` will be available at hourly_stats_output_path/stats/stats.csv
+ 
+ 
+ 
