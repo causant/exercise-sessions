@@ -81,13 +81,14 @@ The solution was implemented in Java and was build and tested on top of a virtua
 * build folder contains the jar used to test the application
 * output_files folder contains the two cvs files obtained by executing the provided program
 
-### Ececution
+### Excecution
  Session reconstruction:
  hadoop jar sessionization.jar sessionization sessionization_input_path sessionization_output_path
- After executing the execution `sessions.csv` will be available at sessionization_output_path/sessions
+ After executing the application, the file `sessions.csv` will be available at sessionization_output_path/sessions
  
+ Hourly stats:
  hadoop jar sessionization.jar hourly_stats sessionization_output_path/sessions/sessions.csv hourly_stats_output_path
- After executing the execution `stats.csv` will be available at hourly_stats_output_path/stats/stats.csv
+ After executing the application, the file `stats.csv` will be available at hourly_stats_output_path/stats/stats.csv
  
  
  
